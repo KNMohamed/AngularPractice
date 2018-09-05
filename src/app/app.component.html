@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+	<a class="navbar-brand" href="#">NavBar</a>
+	<div class="collapse navbar-collapse justify-content-between">
+		<ul class="navbar-nav">
+			<li class="nav-item active">
+				<a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">About</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">FAQ</a>
+			</li>
+		</ul>
+		<form class="bd-search form-inline">
+			<input class="form-control mr-lg-2" type="search" placeholder="Search..." aria-label="Search">
+			<button class="btn btn-sm-2 btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+		</form>
+	</div>
+</nav>
+<div class="position-relative container">
+	<div class="form-label">
+		<strong>For:</strong>
+		{{query}}
+	</div>
+	<input class="form-control mt-2" type="text">
+	<div class="row justify-content-center">
+		<div class="col-sm-10 col-md-8 col-lg-6 col-xl-5">
+			<div class="list-group">
+				<a href="#" class="list-group-item list-group-item-action flex-column
+				align-items-start"
+					*ngFor="let artist of artists"
+					(click)="showArtist(artist)">
+						<div class="media">
+							<div class="media-body align-self-ceter">
+								<h5 class="m-0">{{artist.name}}</h5>
+								{{artist.reknown}}
+							</div> <!--media-body -->
+						</div> <!-- media -->
+				</a> <!-- link -->
+			</div> <!-- list-group -->
+		</div>
+	</div>
+</div>
